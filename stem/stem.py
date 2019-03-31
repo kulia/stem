@@ -65,7 +65,7 @@ def stem(*args, **kwargs):
     ax.plot(x, y, **kwargs_o)
 
     '''
-    TODO: Fix Stem handles.  Hint:
+    TODO: Fix legend Stem handles.  Hint:
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels)
     https://matplotlib.org/users/legend_guide.html
