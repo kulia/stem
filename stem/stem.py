@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+from copy import copy
+
 def stem(*args, **kwargs):
     """Plot discrete sequence data
 
@@ -16,8 +19,6 @@ def stem(*args, **kwargs):
     kwargs:
         Identical to matplotlib.pyplot.plot(**kwargs).
     """
-    import matplotlib.pyplot as plt
-    from copy import copy
 
     if len(args) == 0:
         return {}
@@ -69,6 +70,8 @@ def stem(*args, **kwargs):
     ax.legend(handles, labels)
     https://matplotlib.org/users/legend_guide.html
     '''
+
+    return ax
 
 from sys import modules
 modules[__name__] = stem
