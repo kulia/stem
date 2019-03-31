@@ -1,21 +1,30 @@
 import matplotlib.pyplot as plt
-import numpy as np
-from numpy import pi
-
 import stem
+import os
 
 def main():
-    n = 20
-    Ts = 0.1
-
-    t = np.arange(n)*Ts
-    y = np.sin(2*pi*t)+2
+    y = [
+        2.,         2.58778525, 2.95105652, 2.95105652, 2.58778525, 2.,
+        1.41221475, 1.04894348, 1.04894348, 1.41221475, 2.,         2.58778525,
+        2.95105652, 2.95105652, 2.58778525, 2.,         1.41221475, 1.04894348,
+        1.04894348, 1.41221475]
 
     fig, ax = plt.subplots()
 
-    stem(y, baseline=0, ax=ax)
+    ax.plot(y, '--k', label='continous')
+    stem(y, baseline=0, ax=ax, label='stem')
+
+    ax.legend()
+
     ax.set_xlabel('Time [s]')
     ax.set_ylabel('Magnitude')
+
+    fig_path = './fig/'
+    if not os.path.isdir(fig_path):
+        os.mkdir(fig_path)
+        print('Hello')
+
+    fig.savefig(fig_path+'example.png', dpi=360, transparent=True)
 
     plt.show()
 
