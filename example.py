@@ -22,7 +22,6 @@ def main():
     fig_path = './fig/'
     if not os.path.isdir(fig_path):
         os.mkdir(fig_path)
-        print('Hello')
 
     fig.savefig(fig_path+'example.png', dpi=360, transparent=True)
 
